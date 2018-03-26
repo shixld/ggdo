@@ -1,0 +1,78 @@
+	.top-nav {
+	height: 30px;
+	line-height: 30px;
+	padding: 0 9px;
+	background-color: #fff;
+}
+
+.head-query {
+	padding: 20px 10px;
+	background-color: #fff;
+}
+
+.yt-search {
+	margin:0px 10px 0px 20px;
+}
+
+.class-but-box {
+	padding: 10px 0;
+	border-top: 1px solid #E5E5E5
+}
+
+.add-class-alert{
+	width: 400px;
+	height: 350px;
+	z-index: 100001;
+	position: fixed;
+	left: 0;
+	top: 0;
+	display: none;
+}
+
+
+.yt-model-heard {
+	background: #418DCC;
+	color: #FFFFFF;
+	height: 40px;
+	line-height: 40px;
+	padding-left: 10px;
+	font-size: 16px;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+}
+
+.yt-model-heard img {
+	vertical-align: middle;
+	margin-right: 8px;
+	margin-bottom: 4px;
+}
+.add-class-data{
+	padding: 20px;
+	padding-top: 10px;
+	background-color: #fff;
+}
+.add-class-data .valid-font{
+	top:40px;
+}
+.add-class-data table tr td{
+	padding: 10px 0;
+}
+.add-class-data table tr td:first-child{
+	text-align: right;
+}
+
+.add-button-box{
+	width: 220px;
+	margin: 0 auto;
+	overflow: hidden;
+	zoom: 1;
+	padding-top: 30px;
+}
+.reset-data {
+    background-color: #eee;
+    color: #666;
+    border: none;
+}
+.class-code{
+	width: 278px;
+}

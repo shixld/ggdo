@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.4" xmlns="http://java.sun.com/xml/ns/j2ee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee 
+	http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd" id="WebApp_ID">
+	<!--Welcome Page -->
+
+
+	<session-config>
+		<session-timeout>-1</session-timeout>
+	</session-config>
+
+	<display-name>springframework</display-name>
+	<listener>
+		<listener-class>
+			org.comet4j.core.CometAppListener
+		</listener-class>
+	</listener>
+
+	<!-- HTTP Error Response 
+	<error-page>
+		<error-code>400</error-code>
+		<location>/errors/error_400.jsp</location>
+	</error-page>
+	<error-page>
+		<error-code>403</error-code>
+		<location>/errors/error_403.jsp</location>
+	</error-page>
+	<error-page>
+		<error-code>404</error-code>
+		<location>/errors/error_404.jsp</location>
+	</error-page>
+	<error-page>
+		<error-code>405</error-code>
+		<location>/errors/error_405.jsp</location>
+	</error-page>
+	<error-page>
+		<error-code>500</error-code>
+		<location>/errors/error_500.jsp</location>
+	</error-page>
+	<error-page>
+		<error-code>503</error-code>
+		<location>/errors/error_503.jsp</location>
+	</error-page>
+	<error-page>
+		<exception-type>java.lang.Exception</exception-type>
+		<location>/errors/error_exception.jsp</location>
+	</error-page>-->
+	<!-- 字符过滤器 -->  
+	  <filter>  
+	    <filter-name>encodingFilter</filter-name>  
+	    <filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>  
+	    <init-param>  
+	        <param-name>encoding</param-name>  
+	        <param-value>UTF-8</param-value>  
+	    </init-param>  
+	  </filter>  
+	  <filter-mapping>  
+	    <filter-name>encodingFilter</filter-name>  
+	    <url-pattern>/*</url-pattern>  
+	  </filter-mapping>  
+	<!-- ******************start druid 监控****************** -->
+	<filter>
+		<filter-name>DruidWebStatFilter</filter-name>
+		<filter-class>
+			com.alibaba.druid.support.http.WebStatFilter
+		</filter-class>
+		<init-param>
+			<param-name>exclusions</param-name>
+			<param-value>
+				/resources/*,/files/*,/app/*,*.js,*.gif,*.jpg,*.png,*.css,*.ico,/c/monitor/druid/*
+			</param-value>
+		</init-param>
+		<init-param>
+			<param-name>principalSessionName</param-name>
+			<param-value>currentUsername</param-value>
+		</init-param>
+	</filter>
+	<filter-mapping>
+		<filter-name>DruidWebStatFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	
+	<servlet>
+		<servlet-name>DruidStatView</servlet-name>
+		<servlet-class>
+			com.alibaba.druid.support.http.StatViewServlet
+		</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>DruidStatView</servlet-name>
+		<url-pattern>/druid/*</url-pattern>
+	</servlet-mapping>
+
+	<!--springframe config -->
+	<listener>
+		<listener-class>
+			org.springframework.web.context.ContextLoaderListener
+		</listener-class>
+	</listener>
+	<listener>
+		<listener-class>
+			org.springframework.web.context.request.RequestContextListener
+		</listener-class>
+	</listener>
+	<listener>
+		<listener-class>
+			org.springframework.web.util.IntrospectorCleanupListener
+		</listener-class>
+	</listener>
+
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>
+			classpath:spring/spring-*.xml
+		</param-value>
+	</context-param>
+
+	<servlet>
+		<servlet-name>spring</servlet-name>
+		<servlet-class>
+			org.springframework.web.servlet.DispatcherServlet
+		</servlet-class>
+		<init-param>
+			<param-name>contextConfigLocation</param-name>
+			<param-value>classpath:spring/spring-servlet.xml</param-value>
+		</init-param>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>spring</servlet-name>
+		<url-pattern>/</url-pattern>
+	</servlet-mapping>
+	
+	
+	<servlet>  
+	    <servlet-name>AuthImage</servlet-name>  
+	    <servlet-class>com.ggdo.system.function.servlet.AuthImageServlet</servlet-class>  
+    </servlet>  
+    <servlet>  
+	    <servlet-name>VerifyCode</servlet-name>  
+	    <servlet-class>com.ggdo.system.function.servlet.VerifyCodeServlet</servlet-class>  
+    </servlet>  
+    <servlet>  
+	    <servlet-name>FileUpload</servlet-name>  
+	    <servlet-class>com.ggdo.system.function.servlet.FileUploadedServlet</servlet-class>  
+    </servlet>  
+    <servlet-mapping>  
+	    <servlet-name>FileUpload</servlet-name>  
+	    <url-pattern>/FileUpload</url-pattern>  
+    </servlet-mapping> 
+    <servlet-mapping>  
+	    <servlet-name>VerifyCode</servlet-name>  
+	    <url-pattern>/VerifyCode</url-pattern>  
+    </servlet-mapping> 
+    <servlet-mapping>  
+	    <servlet-name>AuthImage</servlet-name>  
+	    <url-pattern>/AuthImage</url-pattern>  
+    </servlet-mapping>
+    <welcome-file-list>
+    	<welcome-file>index.html</welcome-file>
+    	<welcome-file>index.htm</welcome-file>
+    	<welcome-file>index.jsp</welcome-file>
+    </welcome-file-list> 
+</web-app>

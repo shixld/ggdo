@@ -1,0 +1,1 @@
+﻿package cn.ggdo.system.jcgm.dbToService;public class GenerateService {	/**	 * 生成方法	 */	public void generate() {		System.out.println("生成[Service]......");		try {			Handle handle = new Handle();			handle.setNameUntil();			handle.writeGenerate();			System.out.println("生成[Service]成功!");		} catch (Exception e) {			System.out.println("生成[Service]失败!");		}	}}

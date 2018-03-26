@@ -1,0 +1,49 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans.xsd
+	http://www.springframework.org/schema/aop
+	http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+	<description>spring 异常处理</description>
+
+	<!-- 自定义SimpleMappingExceptionResolver覆盖spring的SimpleMappingExceptionResolver -->
+	<bean id="springExceptionResolver"
+		class="cn.ggdo.system.framework.exception.SpringSimpleMappingExceptionHandler">
+		<!-- 设置日志输出级别，不定义则默认不输出警告等错误日志信息 -->
+		<property name="warnLogCategory" value="WARN"></property>
+		<!-- 默认错误页面，当找不到上面mappings中指定的异常对应视图时，使用本默认配置 -->
+		<property name="defaultErrorView" value="error"></property>
+		<!-- 默认HTTP状态码 -->
+		<property name="defaultStatusCode" value="500"></property>
+		<!-- 定义异常处理页面用来获取异常信息的变量名，默认名为exception -->
+		<property name="exceptionAttribute" value="ex"></property>
+		<!-- 定义需要特殊处理的异常，用类名或完全路径名作为key，异常以页名作为值 -->
+		<property name="exceptionMappings">
+			<props>
+				<prop
+					key="cn.ggdo.system.framework.exception.SystemException">
+					errors/error_500
+				</prop>
+				<prop
+					key="cn.ggdo.system.framework.exception.BusinessException">
+					errors/error_exception
+				</prop>
+				<prop key="java.io.IOException">
+					errors/error_exception
+				</prop>
+				<prop key="java.sql.SQLException">
+					errors/error_exception
+				</prop>
+				<prop key="java.lang.Throwable">
+					errors/error_exception
+				</prop>
+				<prop key="java.lang.Exception">
+					errors/error_exception
+				</prop>
+			</props>
+		</property>
+
+	</bean>
+</beans>

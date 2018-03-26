@@ -1,0 +1,1 @@
+﻿package cn.ggdo.system.jcgm.dbToEntity;public class GenerateEntity {	/**	 * 生成方法	 */	public void generate() {		System.out.println("生成[Entity]......");		try {			Handle handle = new Handle();			handle.setNameUntil();			handle.writeGenerate();			System.out.println("生成[Entity]成功!");		} catch (Exception e) {			System.out.println("生成[Entity]失败!");		}	}}

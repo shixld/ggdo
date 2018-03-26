@@ -1,0 +1,1 @@
+﻿package cn.ggdo.system.jcgm.dbToMybatis;public class GenerateDao {	/**	 * 生成方法	 */	public void generate() {		System.out.println("生成[mapper]......");		try {			Handle handle = new Handle();			handle.setNameUntil();			handle.writeGenerate();			System.out.println("生成[mapper]成功!");		} catch (Exception e) {			System.out.println("生成[mapper]失败!");		}	}}

@@ -1,0 +1,175 @@
+@charset "utf-8";
+
+/**
+ * prompt style
+ * 2017-02-08
+ * yeyuling
+ */
+
+.yt-pop-model {
+	margin: auto;
+	height: 200px;
+	width: 400px;
+	background: #C8C8C8;
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	border-radius: 5px;
+	-moz-border-radius: 5px;/*火狐浏览器兼容*/
+	-webkit-border-radius: 5px;/*谷歌浏览器兼容*/
+}
+
+
+.prom-msg-title {
+	height: 40px;
+	line-height: 40px;
+	text-align: center;
+	font-size: 22px;
+	text-align: center;
+	color: #0769DD;
+}
+
+.method-text {
+	margin-top: 15px;
+	background-color: #95B3D7;
+	padding-left: 5px;
+	height: 25px;
+	line-height: 25px;
+	font-size: 12px;
+	color: #fff;
+	margin-bottom: 10px;
+}
+
+.version {
+	color: #fff;
+	font-size: 14px;
+	font-weight: bold;
+	margin: 10px 0;
+	background-color: #4F81BD;
+	height: 35px;
+	line-height: 35px;
+	padding-left: 5px;
+}
+
+.instr-ul {
+	padding-left: 5px;
+}
+
+.instr-ul li {
+	margin-bottom: 5px;
+}
+
+.brow-img {
+	width: 40px;
+	height: 40px;
+}
+
+.browser-li div {
+	float: left;
+	display: inline-block;
+	margin-right: 15px;
+	padding-left: 10px;
+	text-align: center;
+}
+
+.browser-li div p {
+	text-align: center;
+	color: #AAAAAA;
+	font-weight: bold;
+}
+
+.resource-file-font {
+	color: #2D66D7;
+	padding-left: 5px;
+}
+
+.method-eg {
+	padding-left: 55px;
+	float: left;
+}
+
+.method-test-img {
+	float: right;
+	width: 400px;
+	text-align: left;
+	border-left: 1px dashed #4F81BD;
+	padding-right: 10px;
+}
+
+.test-btn-sty {
+	height: 20px;
+	padding: 0px 5px;
+}
+
+.pro-test-img3 {
+	width: 312px;
+	height: 85px;
+}
+
+.pro-test-img {
+	height: 200px;
+	width: 312px;
+}
+
+.pro-test-img4 {
+	height: 200px;
+	width: 312px;
+}
+
+
+/*success alert style*/
+
+.sub-icon {
+	width: 30px;
+	height: 30px;
+	vertical-align: middle;
+	margin-top: -8px;
+}
+
+.sub-suc {
+	height: 180px;
+	width: 315px;
+	background-color: #ffffff;
+	z-index: 10003;
+	position: fixed;
+	border-radius: 4%;
+	/*谷歌浏览器兼容*/
+	-webkit-border-radius: 4%;
+	/*火狐浏览器兼容*/
+	-moz-border-radius: 4%;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	margin: auto;
+	display: none;
+}
+
+.sub-two {
+	margin-top: 65px;
+}
+
+.sub-text {
+	font-size: 16px;
+	font-weight: 600;
+	margin-left: 11px;
+}
+
+.valid-mar-lf {
+	margin-left: 65px;
+}
+
+.page-title {
+	font-size: 13px;
+	margin-top: 10px;
+	margin-left: 107px;
+}
+
+.suc-time-num {
+	color: #18D448;
+	font-size: 16px;
+	font-weight: 600;
+	margin-left: 5px;
+}

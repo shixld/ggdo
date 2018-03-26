@@ -1,0 +1,1 @@
+﻿package cn.ggdo.system.jcgm.dbToAction;public class GenerateAction {	/**	 * 生成方法	 */	public void generate() {		System.out.println("生成[Action]......");		try {			Handle handle = new Handle();			handle.setNameUntil();			handle.writeGenerate();			System.out.println("生成[Action]成功!");		} catch (Exception e) {			System.out.println("生成[Action]失败!");		}	}}

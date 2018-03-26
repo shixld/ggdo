@@ -1,0 +1,69 @@
+aopalliance.jar 【这个包是AOP联盟的API包,里面包含了针对面向切面的接口。 通常Spring等其它具备动态织入功能的框架依赖此包  spring-aop依赖】
+asm.jar 【Spring 在底层都用到了 ASM(CgLib 底层用的 asm) 】
+aspectjrt.jar 【AOP】
+aspectjweaver.jar 【AOP】
+aviator.jar 【公式解析】
+cglib.jar 【spring的必备jar包，cglib用来继承类或实现接口以产生对象】
+classmate.jar 【hibernate-validator.jar依赖】
+commons-beanutils.jar
+commons-codec.jar
+commons-collections.jar 【spring-core，spring-context依赖】
+commons-configuration.jar
+commons-digester.jar
+commons-fileupload.jar
+commons-io.jar
+commons-jexl.jar
+commons-lang3.jar
+commons-pool2.jar
+dom4j.jar
+druid.jar 【阿里的数据库连接池】
+ehcache.jar 【缓存处理】
+fastjson.jar 【号称最快的json转化工具】
+guava.jar 【google的工具包】
+hibernate-validator.jar 【数据校验 使用hibernate的实现  依赖classmate.jar,jboss-logging.jar】
+hibernate-validator-annotation-processor.jar 【数据校验  使用hibernate的实现 注解方式】
+javassist.jar 【mybatis依赖 。分析、编辑和创建Java字节码的类库】
+jboss-logging.jar 【hibernate-validator.jar依赖】
+jcl-over-slf4j.jar 【日志 将jcl的转到slf4j】
+jdom.jar 【XML解析】
+joda-time.jar 【日期处理】
+jodd.jar 【工具包 倚天工具包大部分依赖此工具】
+jxls-core.jar 【导出excel 采用模板方式】
+jxls-reader.jar 【导出excel 采用模板方式】
+log4j-api.jar 【日志 log4j2】
+log4j-core-2.0.jar  【日志 log4j2】
+log4j-over-slf4j.jar 【日志 将log4j的转到slf4j】
+log4j-slf4j-impl-2.0.jar 【日志 slf4j的log4j2实现】
+lombok.jar 【简化get、get方法】
+mail.jar 【邮件】
+mybatis.jar 【依赖 asm  cglib javassist】
+mybatis-spring.jar 【mybatis和spring整合】
+mysql-connector-java.jar 【mysql的jdbc驱动】
+poi.jar 【office文档处理】
+poi-ooxml.jar 【office文档处理】
+poi-ooxml-schema.jar 【office文档处理】
+quartz.jar 【调度任务】
+shiro-all.jar 【权限控制】
+simplecaptcha.jar 【验证码】
+slf4j-api.jar 【日志 slf4j接口】
+spring-aop.jar 【spring AOP】
+spring-aspects.jar 【spring AOP  Spring提供对AspectJ框架的整合】
+spring-beans.jar 【spring beans.所有应用都用到，包含访问配置文件，创建和管理bean等，是Spring IOC的基础实现】
+spring-context.jar 【spring context.提供在基础IOC功能上的扩展服务，此外还提供许多企业级服务的支持，有邮件服务、任务调度、JNDI定位，EJB集成、远程访问、缓存以及多种视图层框架的支持】
+spring-context-support.jar 【spring context support.Spring context的扩展支持，用于MVC方面】
+spring-core.jar 【spring core.Spring的核心工具包，其他包依赖此包】
+spring-expression.jar 【spring expression.Spring表达式语言】
+spring-instrument.jar 【Spring对服务器的代理接口】
+spring-jdbc.jar 【Spring对JDBC的封装】
+spring-jms.jar 【为简化jms api的使用而做的简单封装】
+spring-messaging.jar
+spring-orm.jar 【整合第三方的orm实现，如hibernate，ibatis，jdo以及spring 的jpa实现】
+spring-oxm.jar 【Spring对于object/xml映射的支持，可以让JAVA与XML之间来回切换】
+spring-tx.jar 【为JDBC,HIBERNATE,JDO和JPA提供的一致性的声明式和简单编程式事务管理】
+spring-web.jar 【Spring web】
+spring-webmvc.jar 【Spring MVC】
+spring-websocket.jar 【Spring websocket支持】
+testng.jar 【单元测试 替代junit】
+tk-filters.jar 【js、css等压缩，节省网络资源】
+validation-api.jar 【数据校验 接口，需要hibernate等实现】
+yitian-common.jar 【倚天工具包 优先使用】

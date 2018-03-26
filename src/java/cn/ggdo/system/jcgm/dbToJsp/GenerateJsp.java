@@ -1,0 +1,1 @@
+﻿package cn.ggdo.system.jcgm.dbToJsp;public class GenerateJsp {	/**	 * 生成方法	 */	public void generate() {		System.out.println("生成[jsp-list]......");		try {			Handle listJsp = new Handle();			listJsp.setNameUntil();			listJsp.writeGenerate();			System.out.println("生成[jsp-list]成功!");		} catch (Exception e) {			System.out.println("生成[jsp-list]失败!");		}	}}

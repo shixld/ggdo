@@ -1,0 +1,33 @@
+.page-info{
+	color: #333333;
+	font-size: 14px;
+	margin-top: 20px;
+	padding-bottom: 20px;
+	
+}
+.page-info .opinion-page table tr td{
+	cursor: pointer;
+}
+.last-page,.next-page,.frist-page,.end-page{
+	color: #b8b8b8;
+}
+.last-page.pointer,.next-page.pointer,.frist-page.pointer,.end-page.pointer{
+	color: #333;
+}
+.page-info table{
+	margin: 0 auto;
+}
+.page-info table td div{
+	font-size: 14px;
+	padding: 0 9px;
+}
+.page-info table td div.data-count{
+	cursor: auto;
+}
+.page-info table td div.data-count:hover{
+	color: #333333;
+}
+.page-info table td div.active,.page-info table td div.pointer:hover{
+	color: #4386e2;
+	
+}

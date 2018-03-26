@@ -1,0 +1,81 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans.xsd
+	http://www.springframework.org/schema/aop
+	http://www.springframework.org/schema/aop/spring-aop.xsd
+	http://www.springframework.org/schema/context
+	http://www.springframework.org/schema/context/spring-context.xsd  
+	http://www.springframework.org/schema/mvc
+	http://www.springframework.org/schema/mvc/spring-mvc.xsd">
+
+	<description>Spring MVC</description>
+
+	<!-- 只搜索@Controller和@ControllerAdvice标注的类 不搜索其他标注的类 -->
+	<!-- 把标记了@Controller注解的类转换为bean -->
+	<!-- base-package="cn.ggdo.system.framework.controller,cn.ggdo.system.framework.controller.advice,cn.ggdo.system.function.**.controller" -->
+	<context:component-scan
+		base-package="cn.ggdo.system.**" use-default-filters="false">
+		<context:include-filter type="annotation" expression="org.springframework.stereotype.Service" />
+		<context:include-filter type="annotation" expression="org.springframework.stereotype.Repository" />
+		<context:include-filter type="annotation" expression="org.springframework.stereotype.Controller" />
+	</context:component-scan>
+
+	
+	<!-- 如果Proxy-targer-class=false，默认是用jdk动态代理。 所以代理不了controller类,需要配置为true 
+		shiro配置注解方式和事务有冲突，新增、修改、删除不能用。shiro改为动态filterChainDefinitions ******************** 
+		<aop:aspectj-autoproxy proxy-target-class="true" /> -->
+
+	<!-- 启动注解驱动的Spring MVC功能，注册请求url和注解POJO类方法的映射. 指定自己定义的validator -->
+	<mvc:annotation-driven validator="validator">
+		<!-- 默认的注解映射的支持 
+			<mvc:annotation-driven validator="validator" conversion-service="conversionService" />-->
+		<!-- 异步支持 默认30秒超时 <mvc:async-support default-timeout="30000" task-executor="executor" 
+			/> -->
+		<!--用fastJson需要在这配置 -->
+		<mvc:message-converters>
+			<ref bean="jsonConverter" />
+		</mvc:message-converters>
+	</mvc:annotation-driven>
+
+	<!-- 当在web.xml 中 DispatcherServlet使用 <url-pattern>/</url-pattern> 映射时，能映射静态资源 -->
+	<mvc:default-servlet-handler />
+	<!-- 资源 映射 -->
+	<mvc:resources mapping="/resources/**" location="/resources/" />
+	<mvc:resources mapping="/share/**" location="/share/" />
+	<mvc:resources mapping="/files/**" location="/files/" />
+	<mvc:resources mapping="/admin/**" location="/admin/" />
+
+	<!--默认界面 -->
+	<mvc:view-controller path="/" view-name="redirect:/index.jsp" />
+
+	<!-- 对模型视图名称的解析，在请求时模型视图名称添加前后缀 -->
+	<bean
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver"
+		p:prefix="/WEB-INF/admin/" p:suffix=".jsp" />
+
+	<!-- 文件上传 -->
+	<bean id="multipartResolver"
+		class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+		<!-- 解析request的编码 ，默认是 ISO-8859-1 -->
+		<property name="defaultEncoding" value="UTF-8" />
+		<!-- 设置最大允许的大小(字节)。-1表示没有限制(默认) 1024*1024*10=10MB -->
+		<property name="maxUploadSize" value="1048576000" />
+		<!--被允许的最大的内存的大小，Default is 10240 bytes -->
+		<property name="maxInMemorySize" value="20480" />
+		<!-- 一个类似懒加载的属性.可以定义该属性.让解析文件的时候再抛异常,然后Controller中定义异常处理的方法 -->
+		<property name="resolveLazily" value="true" />
+	</bean>
+
+	<!-- 设置本地化信息的拦截器 -->
+	<mvc:interceptors>
+		<bean
+			class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor">
+			<property name="paramName" value="language" />
+		</bean>
+	</mvc:interceptors>
+</beans>
